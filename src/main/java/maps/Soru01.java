@@ -21,5 +21,11 @@ public class Soru01 {
         System.out.println(map);
 
 
+        map.remove(0);
+        System.out.println( map);
+
+        map.put(0, "the");
+        map.put(3, "the");
+        System.out.println( map);
     }
 }
