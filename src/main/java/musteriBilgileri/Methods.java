@@ -88,16 +88,18 @@ public class Methods {
             case 1 :
                 saveInfo();
                 selectOption();
-
                 break;
+
             case 2 :
                 getInfo();
                 selectOption();
                 break;
+
             case 3 :
                 removeInfo();
                 selectOption();
                 break;
+
             case 4 :
                 exit();
                 break;
