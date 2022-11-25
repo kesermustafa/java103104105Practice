@@ -6,6 +6,11 @@ import java.util.Scanner;
 
 public class LmsOdev01 {
 
+    public static final String W = "\u001B[37m";
+    public static final String R = "\u001B[31m";
+    public static final String G = "\u001B[32m";
+    public static final String Y = "\u001B[33m";
+    public static final String B = "\u001B[34m";
 
     /*  - Kullanıcıdan int öğelerini girmesini ve listeye öğe eklemesini istemek için kod yazın
         - Kullanıcıdan kaldırılacak öğeleri girmesini isteyin, ardından bu öğeyi listeden kaldırın.
@@ -23,7 +28,7 @@ public class LmsOdev01 {
     static List<Integer> silinecek = new ArrayList<>();
 
     public static void giris(){
-        System.out.println("Lutfen yapmak istediginiz islemi seciniz..\n1= Elemen ekleme\n2= Kaldirilacak/silinecek elemanlar\n3= Eleman guncelleme\n0= Exit/Cikis");
+        System.out.println(G+"Lutfen yapmak istediginiz islemi seciniz.."+Y+"\n1= Elemen ekleme\n2= Eleman silme\n3= Eleman guncelleme\n0= Exit/Cikis");
         Scanner input = new Scanner(System.in);
         int secim = input.nextInt();
         switch (secim){
@@ -38,18 +43,18 @@ public class LmsOdev01 {
                 guncelle();
                 break;
             case 0 :
-                System.out.println("Tesekkur ederiz...");
+                System.out.println(B+"Tesekkur ederiz...");
                 break;
             default:
-                System.out.println("Gecersiz secim yaptiniz..");
-
+                System.out.println(R+"Gecersiz secim yaptiniz..");
+                giris();
         }
     }
 
     public static void elemenEkle(){
 
         do {
-            System.out.println("Eklemek istediginiz elemanlari giriniz...\nIselemi sonlandirmak icin 0 giriniz ");
+            System.out.println(B+"Eklemek istediginiz elemani giriniz...\nIselemi tamamlamak icin 0 giriniz ");
             int eleman = input.nextInt();
             if (eleman!=0){
                 arr.add(eleman);
@@ -60,48 +65,60 @@ public class LmsOdev01 {
 
         System.out.println(arr);
         giris();
-
     }
 
+    public static void elemanSil() {
 
-    public static void elemanSil(){
-
-        System.out.println("Mevcut listeniz : " + arr);
-
-        do {
-            System.out.println("Silmek istediginiz elemanlari giriniz...\nIselemi sonlandirmak icin 0 giriniz ");
+        System.out.println(G+"Mevcut listeniz : " + arr);
+        System.out.println(B + "1= Tek eleman silmek \n2= Coklu eleman silmek icin giriniz ");
+        int sec = input.nextInt();
+        if (sec == 1) {
+            System.out.println(B + "Silmek istediginiz elemani giriniz..");
             int elemanSil = input.nextInt();
+            arr.remove((Integer) elemanSil);
+            System.out.println(G+"Guncel listeniz : " + arr);
+            giris();
+        } else {
 
-            if(elemanSil!=0){
-                silinecek.add(elemanSil);
-            }else{
-                arr.removeAll(silinecek);
-                System.out.println(silinecek + " elemanlar silsinmistir.");
-                break;
-            }
+            do {
+                System.out.println(B + "Silmek istediginiz elemani giriniz...\nIslemi tamamlamak icin 0 giriniz ");
+                int elemanSil = input.nextInt();
 
-        }while (true);
+                if (elemanSil != 0) {
+                    if (arr.contains(elemanSil)) {
+                        silinecek.add(elemanSil);
+                    } else {
+                        System.out.println(R + "Bu eleman listenizde bulunmamaktadir.");
+                    }
 
-        System.out.println("Guncel listeniz : " + arr);
-        giris();
+                } else {
+                    arr.removeAll(silinecek);
+                    System.out.println(silinecek + " elemanlar silsinmistir.");
+                    break;
+                }
+            } while (true);
+
+            System.out.println(G+"Guncel listeniz : " + arr);
+            giris();
+        }
     }
-
 
     public static void guncelle(){
 
-        System.out.println("Guncel listeniz : " + arr);
-        System.out.println("Guncellemek istediginiz elemani giriniz...");
+        System.out.println(G+"Guncel listeniz : " + arr);
+        System.out.println(B+"Guncellemek istediginiz elemani giriniz...");
         int eleman1 = input.nextInt();
-        System.out.println("Yeni deger giriniz...");
-        int eleman2 = input.nextInt();
-        for (Integer w : arr) {
-            if(arr.contains(eleman1)){
-                arr.set(arr.indexOf(eleman1), eleman2);
+
+            if(!arr.contains(eleman1)){
+                System.out.println(R+"Girdiginiz eleman bulunmamaktadir.");
+                guncelle();
             }else {
-                System.out.println("Girdiginiz eleman bulunmamaktadir.");
+                System.out.println(B+"Yeni deger giriniz...");
+                int eleman2 = input.nextInt();
+                arr.set(arr.indexOf(eleman1), eleman2);
             }
-        }
-        System.out.println("Guncel listeniz : " + arr);
+
+        System.out.println(G+"Guncel listeniz : " + arr);
         giris();
     }
 
