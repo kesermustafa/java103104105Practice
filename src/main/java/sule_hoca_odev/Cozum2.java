@@ -13,8 +13,8 @@ public class Cozum2 {
 
     }
 
-    public static String kelimeyeBol(String text) {
-        String[] kelime = text.replaceAll("\\p{Punct}", "").replaceAll("\\s+", " ").trim().split(" ");
+    public static String kelimeyeBol(String str) {
+        String[] kelime = str.replaceAll("\\p{Punct}", "").replaceAll("\\s+", " ").trim().split(" ");
 
         String yuksekPuanliKelime = "";
 
