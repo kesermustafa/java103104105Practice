@@ -12,6 +12,19 @@ public class LmsOdev01 {
     public static final String Y = "\u001B[33m";
     public static final String B = "\u001B[34m";
 
+    public static final String RESET = "\u001B[0m";
+    public static final String SIYAH = "\u001B[30m";
+    public static final String KIRMIZI = "\u001B[31m";
+    public static final String YEŞİL = "\u001B[32m";
+    public static final String SARI = "\u001B[33m";
+    public static final String MAVI = "\u001B[34m";
+    public static final String MOR = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String Gri = "\u001B[37m";
+    public static final String BEYAZ = "\u001B[38m";
+
+
+
     /*  - Kullanıcıdan int öğelerini girmesini ve listeye öğe eklemesini istemek için kod yazın
         - Kullanıcıdan kaldırılacak öğeleri girmesini isteyin, ardından bu öğeyi listeden kaldırın.
         - Kullanıcıdan güncellemek için öğeyi girmesini isteyin, ardından güncelleyin.

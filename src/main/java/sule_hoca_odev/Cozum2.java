@@ -3,38 +3,42 @@ package sule_hoca_odev;
 import java.util.Scanner;
 
 public class Cozum2 {
-    public static void main(String[] args) {
 
+    public static final String B = "\u001B[31m";
+    public static final String G = "\u001B[38m";
+
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Bir cumle giriniz.");
-        String str = input.nextLine().toLowerCase();
+        String str = input.nextLine();
 
-        System.out.println("Girdiginiz cumlede en yuksek puanli kelime = " + kelimeyeBol(str));
+        System.out.println(G+"Girdiginiz cumlede en yuksek puanli kelime = \"" +  B+ kelimeyeBolHesapla(str) + G+"\" kelimesidir.");
 
     }
 
-    public static String kelimeyeBol(String str) {
-        String[] kelime = str.replaceAll("\\p{Punct}", "").replaceAll("\\s+", " ").trim().split(" ");
+    public static String kelimeyeBolHesapla(String str) {
+        String[] kelime = str.replaceAll("\\p{Punct}", "").replaceAll("\\d", "").replaceAll("\\s+", " ").trim().split(" ");
+        // Noktalama isartleri, rakamlar aralarda olabilecek fazla spaceler ile basda ve sonda olabilecek spacler temizlendi.
+        // String space lerden bolunerek array'a atandi.
 
-        String yuksekPuanliKelime = "";
+        String yuksekPuanliKelime = "";  // En yuksek puanli kelimenin atanacagi konteyner olusturuldu.
 
         int kelimePuan = 0;
 
         for (String w : kelime) {
 
-            int say = 0;
+            int sum = 0;
 
             for (int i = 0; i < w.length(); i++) {
-                char ch = w.charAt(i);
-
+                char ch = w.toLowerCase().charAt(i);  // Buyuk harf korumak ucun toLowerCase() methodu burada kullanildi.
                 if (ch >= 'a' && ch <= 'z') {
-                    say += ch - 'a' + 1;
+                    sum += ch - 'a' + 1;
                 }
             }
 
-                if (say > kelimePuan) {
+                if (sum > kelimePuan) {
                     yuksekPuanliKelime = w;
-                    kelimePuan = say;
+                    kelimePuan = sum;
                 }
         }
         return yuksekPuanliKelime;
