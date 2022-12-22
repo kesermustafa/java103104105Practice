@@ -26,7 +26,7 @@ public class Soru01 {
     }
 
     public static void yaz(int a){
-        if ( a>-1){
+        if ( a> -1){
             if(ciftBul(a)){
                 System.out.print(a + " ");
             }

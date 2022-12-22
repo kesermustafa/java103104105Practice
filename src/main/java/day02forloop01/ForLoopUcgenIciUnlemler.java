@@ -28,15 +28,12 @@ public class ForLoopUcgenIciUnlemler {
             for(int k = st; k>=i ; k--){
                 System.out.print(" ");
             }
-
             for(int m=1; m<=i ; m++){
 
                 if(m==1 || m==i || i==st){
                     System.out.print("* ");
-//                }else if(i==st){
-//                    System.out.print("* ");
                 }else{
-                    System.out.print("! ");
+                    System.out.print("  ");
                 }
             }
             System.out.println();
