@@ -28,6 +28,7 @@ public class ElemanKaydirma {
                 idx++;
             }
         }
+
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(brr));
 
