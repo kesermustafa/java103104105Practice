@@ -26,9 +26,44 @@ public class HarfKelimeSay {
         }
         System.out.println(gorunum);
 
+        System.out.println("*-----------------------* ");
+        // 2 -----
 
+        // Size verilen bir cumledeki her kelimenin kac kere kullanildigini gosteren kodu yaziniz...
+        // "I like to move it move it"
 
+        String str = "I like to move it, move it.";
 
+        str = str.replaceAll("\\p{Punct}", "");
+        System.out.println(str);
+
+        // Kelimeleri almak icin split() kullanalim.
+
+        String[] kelimeler = str.split(" ");
+        System.out.println(Arrays.toString(kelimeler));
+
+        Map<String, Integer> gorun = new HashMap<>();
+
+        for(String w : kelimeler){
+
+            Integer gorunumSayisi = gorun.get(w);
+
+            if(gorunumSayisi==null){
+
+                gorun.put(w, 1);
+
+            }else{
+                gorun.put(w, gorunumSayisi+1);
+            }
+        }
+
+        System.out.println(gorun);  // {move=2, like=1, I=1, to=1, it=2}
+
+        System.out.println("*-----------------------* ");
+        // 3 -----
+
+        String str1 = "   Ali,   okula   ....,,,   geldi    ve Ayse    de okula    geldi.    ";
+        kelimeleriSay(str1);
 
 
 
