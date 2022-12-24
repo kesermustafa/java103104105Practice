@@ -2,6 +2,7 @@ package harf_Kelime_Say;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class HarfKelimeSay {
 
@@ -35,6 +36,24 @@ public class HarfKelimeSay {
 
     }
 
+
+        // METHOD OLUSTURDUK
+    public static void kelimeleriSay(String str){
+
+        String yeniString = str.replaceAll("\\p{Punct}", "").replaceAll("\\s+", " ").trim();
+        System.out.println(yeniString);
+        String[] arr = yeniString.split(" ");
+        Map<String, Integer> map = new HashMap<>();
+
+        for(String w : arr){
+            if(!map.containsKey(w)){
+                map.put(w, 1);
+            }else {
+                map.put(w, map.get(w)+1);
+            }
+        }
+        System.out.println(map);
+    }
 
 
 
