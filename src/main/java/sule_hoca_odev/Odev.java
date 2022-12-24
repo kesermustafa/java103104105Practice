@@ -10,11 +10,12 @@ public class Odev {
         System.out.println("Bir cumle giriniz.");
         String str = input.nextLine();
 
-        System.out.println("Girdiginiz cumlede en yuksek puanli kelime = " + kelimeyeBol(str));
+        System.out.println("Girdiginiz cumlede en yuksek puanli kelime = " + kelimeyeBolHesapla(str));
 
     }
 
-    public static String kelimeyeBol(String text) {
+    // stringi kelimelere bolmek icin method olusturduk
+    public static String kelimeyeBolHesapla(String text) {
         String[] kelime = text.replaceAll("\\p{Punct}", "").replaceAll("\\s+", " ").trim().split(" ");
 
         String yuksekPuanliKelime = "";
@@ -23,7 +24,7 @@ public class Odev {
 
         for (String w : kelime) {
 
-            int sum = harfSay(w);
+            int sum = harfSay(w);  // kelimelerin harf deger toplamini bulmak icin olusturdugumuz methodu cagirdik..
 
             if (sum > kelimePuan) {
                 yuksekPuanliKelime = w;
@@ -33,7 +34,7 @@ public class Odev {
         return yuksekPuanliKelime;
     }
 
-
+    // HARF SAYMAK ICIN METHOD
     public static int harfSay(String kelime) {
         kelime = kelime.toLowerCase();
 
