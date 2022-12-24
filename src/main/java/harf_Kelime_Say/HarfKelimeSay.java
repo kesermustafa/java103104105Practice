@@ -60,7 +60,38 @@ public class HarfKelimeSay {
         System.out.println(gorun);  // {move=2, like=1, I=1, to=1, it=2}
 
         System.out.println("*-----------------------* ");
-        // 3 -----
+
+
+        //3 -----
+        String s = "Berna bugun aradi gece uzun uzun konustuk";
+
+        //split()
+        String ch[] = s.split("");
+        System.out.println(Arrays.toString(ch));
+
+        //sort()
+        Arrays.sort(ch);
+        System.out.println(Arrays.toString(ch));
+
+        //counter
+        int counter = 0;
+
+        for(int i=1; i<ch.length; i++) {
+            if(ch[i-1].equals(ch[i])) {
+                counter++;
+            }else {
+                System.out.println(ch[i-1] + "'in sayisi:" + (counter + 1));
+                counter = 0;
+            }
+            if(i==ch.length-1) {
+                System.out.println(ch[i] + "'in sayisi:" + (counter + 1));
+            }
+        }
+
+        System.out.println("*-----------------------* ");
+
+
+        // 4 ----- METHOD CAGIR
 
         String str1 = "   Ali,   okula   ....,,,   geldi    ve Ayse    de okula    geldi.    ";
         kelimeleriSay(str1);
