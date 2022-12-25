@@ -11,7 +11,7 @@ public class HarfKelimeSay {
         // size verilen bir kelimedeki kullanilan harflerin kacar kere kullanildigini gosteren kodu yaziniz...
         // abbcaa == a=3, b=2, c=1
 
-        String kelime = "abbcaa";
+        String kelime = "Stringde kullanilan harflerin kacar kere kullanildigini goster";
         HashMap<String, Integer> gorunum = new HashMap<>();
         String[] harfler = kelime.split("");
         System.out.println(Arrays.toString(harfler));
