@@ -29,7 +29,7 @@ public class RakamlariTersCevir {
         int sayi = 512345;
 
         String str = "";
-        for(int w = 0; w<sayi; w++){
+        for(int w = 0; w<=sayi; w++){
             str = str+sayi%10;
           sayi= sayi/10;
         }
