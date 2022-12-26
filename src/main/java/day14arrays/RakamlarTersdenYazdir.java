@@ -4,7 +4,7 @@ public class RakamlarTersdenYazdir {
 
     public static void main(String[] args) {
 
-        int number = 196753420;
+        int number = 1196753000;
         System.out.println(number);
 
         while (number>0){

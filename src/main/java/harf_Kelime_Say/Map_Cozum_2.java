@@ -8,17 +8,17 @@ public class Map_Cozum_2 {
 
             String str1 = "   Ali,   okula   ....,,,   geldi    ve Ayse    de okula    geldi.    ";
 
-//        kelimeleriSay(str1);
-//        System.out.println("*-----------------*");
-//
-//        mapYazdir(map(str1));
-//        System.out.println("*-----------------*");
+        kelimeleriSay(str1);
+        System.out.println("*-----------------*");
 
-//        Map<String, Integer> myMap = map(str1);  // key degerine sort yapmak icin
-//        mapYazdir(myMap);
-//        System.out.println("*-----------------*");
-//
-//        sortedMapValue(map(str1));  // Value derine gore sort yapar
+        mapYazdir(map(str1));
+        System.out.println("*-----------------*");
+
+        Map<String, Integer> myMap = map(str1);  // key degerine sort yapmak icin
+        mapYazdir(myMap);
+        System.out.println("*-----------------*");
+
+        sortedMapValue(map(str1));  // Value derine gore sort yapar
 
 
 
