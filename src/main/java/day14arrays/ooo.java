@@ -7,15 +7,15 @@ public class ooo {
      */
 
     public static void main(String[] args) {
-        yazdır(1);
+        yazdir(1);
     }
 
 
-    public static void yazdır(int sayi){//-100ile -1
+    public static void yazdir(int sayi){//-100ile -1
 
         if(sayi<101){
             System.out.print(sayi+", ");
-            yazdır(sayi+1);
+            yazdir(sayi+1);
         }
     }
 }
