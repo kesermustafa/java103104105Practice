@@ -7,26 +7,26 @@ public class asalSayilariBul {
 
         Scanner scan = new Scanner(System.in);
         System.out.print("Bir sayi giriniz :");
-        int rakam = scan.nextInt();
+        int sayi = scan.nextInt();
 
         int sayac = 0;
-        for(int sayi=2; sayi<=rakam; sayi++) {
+        for(int k=2; k<=sayi; k++) {
 
             boolean flag = true;
 
-            for (int i = 2; i < sayi; i++) {
-                if (sayi % i == 0) {
-                    flag=false;
+            for (int i = 2; i < k; i++) {
+                if (k % i == 0) {
+                   flag=false;
                     break;
                 }
             }
 
             if(flag) {
-                System.out.print(sayi+", ");
+                System.out.print(k+", ");
                 sayac++;
             }
         }
         System.out.println();
-        System.out.println(rakam + " icerisinde " + sayac + " adet asal sayi vardir..");
+        System.out.println(sayi + " icerisinde " + sayac + " adet asal sayi vardir..");
     }
 }
