@@ -1,5 +1,3 @@
-package devtim;
-
 public class StaticSoru01 {
 
     static int a = 12;
