@@ -1,4 +1,4 @@
-package devtim;
+package sirketUretimDepoSatis;
 
 import java.util.Scanner;
 

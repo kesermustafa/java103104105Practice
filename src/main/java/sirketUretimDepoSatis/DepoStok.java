@@ -1,4 +1,4 @@
-package devtim;
+package sirketUretimDepoSatis;
 
 import java.util.Scanner;
 
@@ -112,7 +112,7 @@ public class DepoStok {
 
 
         public void cikolataUretim(){
-            System.out.println("Uretilen biskuvi miktarini giriniz..");
+            System.out.println("Uretilen cikolata miktarini giriniz..");
             int uretilenCikolata = input.nextInt();
             if(uretilenCikolata>0){
                cikolataUretim(uretilenCikolata);
